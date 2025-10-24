@@ -63,7 +63,7 @@ export default function Quiz() {
   }
 
   const currentHandData = handColorMap.get(currentHand);
-  const correctColorOption = COLOR_OPTIONS.find(c => c.id === currentHandData.color);
+  const correctColorOption = COLOR_OPTIONS.find(c => c.id === currentHandData?.color);
 
   return (
     <div className="w-full max-w-2xl mx-auto p-6">
