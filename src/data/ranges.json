@@ -1,0 +1,71 @@
+{
+  "colorGroups": {
+    "purple": {
+      "label": "紫",
+      "bgColor": "#8B5CF6",
+      "hands": ["AA", "KK", "QQ", "AKs", "AKo"]
+    },
+    "red": {
+      "label": "赤",
+      "bgColor": "#EF4444",
+      "hands": ["JJ", "AQs"]
+    },
+    "orange": {
+      "label": "橙",
+      "bgColor": "#F59D0D",
+      "hands": ["TT", "AJs", "KQs"]
+    },
+    "yellow": {
+      "label": "黄",
+      "bgColor": "#FCDF47",
+      "hands": ["99", "ATs", "KJs", "AQo"]
+    },
+    "green": {
+      "label": "緑",
+      "bgColor": "#14803D",
+      "hands": ["88", "A9s", "KTs", "QJs", "KQo", "AJo"]
+    },
+    "lightgreen": {
+      "label": "黄緑",
+      "bgColor": "#84CC16",
+      "hands": [
+        "A8s", "A7s", "A6s", "A5s", "A4s", "A3s", "A2s",
+        "K9s", "Q9s", "J9s", "T9s",
+        "QTs", "JTs",
+        "ATo", "KJo",
+        "77", "66", "55"
+      ]
+    },
+    "lightblue": {
+      "label": "水色",
+      "bgColor": "#38BDF8",
+      "hands": [
+        "K8s", "K7s", "K6s", "K5s", "K4s", "K3s", "K2s",
+        "Q8s", "J8s", "T8s", "98s",
+        "A9o", "KTo", "QJo", 
+        "44", "33", "22"
+      ]
+    },
+    "white": {
+      "label": "白",
+      "bgColor": "#FFFFFF",
+      "hands": [
+        "Q7s", "Q6s", "Q5s", "Q4s", "Q3s", "Q2s",
+        "J7s", "T7s", "97s", "87s",
+        "76s", "65s", "54s",
+        "A8o", "A7o", "A6o", "A5o",
+        "K9o", "Q9o", "J9o", "T9o",
+        "QTo", "JTo" 
+      ]
+    },
+    "darkgray": {
+      "label": "濃灰",
+      "bgColor": "#6B7280",
+      "hands": [
+        "J6s", "J5s", "J4s", "J3s", "J2s", 
+        "T6s", "96s", "86s",
+        "75s", "64s"
+      ]
+    }
+  }
+}

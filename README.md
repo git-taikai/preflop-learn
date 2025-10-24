@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ポーカー プリフロップレンジ 暗記サイト
 
-## Getting Started
+ポーカーのプリフロップレンジを効率的に暗記するためのクイズサイトです。
 
-First, run the development server:
+## 機能
+
+### クイズモード
+- ランダムにハンド（例: AKs, T9o）を表示
+- ユーザーは正しい色を選択
+- 正誤判定とスコア表示
+- 次の問題へ進む、リセット機能
+
+### レンジ表モード
+- 13×13のハンドマトリックスを表示
+- 各ハンドを色分けして視覚的に確認
+- 色の凡例付き
+
+## 開発環境のセットアップ
+
+### 必要なもの
+- Node.js 18.17 以上
+
+### インストール
+
+依存パッケージは既にインストール済みです。
+
+### 開発サーバーの起動
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ブラウザで [http://localhost:3000](http://localhost:3000) を開いてアプリケーションを確認できます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### ビルド
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+### 本番環境での起動
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 技術スタック
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Next.js 14** (App Router)
+- **React 19**
+- **TypeScript**
+- **Tailwind CSS v4**
 
-## Deploy on Vercel
+## プロジェクト構造
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+src/
+├── app/
+│   ├── globals.css       # グローバルスタイル
+│   ├── layout.tsx        # ルートレイアウト
+│   └── page.tsx          # メインページ（モード切替）
+├── components/
+│   ├── ColorButton.tsx   # 色選択ボタン
+│   ├── HandGrid.tsx      # ハンドマトリックス表示
+│   └── Quiz.tsx          # クイズモード
+├── data/
+│   └── ranges.json       # レンジデータ（全169ハンド）
+└── lib/
+    ├── constants.ts      # 定数定義
+    └── types.ts          # TypeScript型定義
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## レンジデータのカスタマイズ
+
+`src/data/ranges.json` を編集することで、レンジ表をカスタマイズできます。
+
+各ハンドには以下の情報が含まれます：
+- `color`: 色のID
+- `label`: 日本語ラベル
+- `bgColor`: 背景色（HEXカラーコード）
+
+## 色の種類
+
+- 紫 (purple) - 最強ハンド
+- 赤 (red) - プレミアムハンド
+- 橙 (orange) - 強いハンド
+- 黄 (yellow) - 良いハンド
+- 緑 (green) - プレイアブルハンド
+- 黄緑 (lightgreen) - 条件付きプレイ
+- 水色 (lightblue) - スペキュレーティブ
+- 白 (white) - マージナル
+- 灰 (gray) - 弱いハンド
+- 濃灰 (darkgray) - フォールド推奨
